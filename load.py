@@ -117,7 +117,7 @@ if __name__ == '__main__':
     -filt : filter for a field and attribute,
             ex `-filt profile/busLocation=Toronto`
     -fieldstat : Get admissions stats sorted by a given field
-    -out : print the resulting data
+    -out : print the resulting field for filtered data (or unfiltered)
     '''
     cli_flags = ['-f', '-filt', '-fieldstat', '-out']
 
@@ -149,3 +149,7 @@ if __name__ == '__main__':
 
     if '-fieldstat' in received_args.keys():
         admits_by_field(procd_data, received_args['-fieldstat'])
+
+    if '-out' in received_args.keys():
+        for ent in procd_data:
+            print(ent[received_args['-out']])
