@@ -44,11 +44,10 @@ def admits_by_field(data, field):
                                          group['confirmed'], \
                                          group['declined']
 
-        total = complete + admit + confirm + decl
+        total = complete
 
         print(f"{cat}, {total} applicants \n")
-        print(f"Compl: {complete}, {100*complete/total:.2f}% \n\
-Admit: {admit}, {100*admit/total:.2f}% \n\
+        print(f"Admit: {admit}, {100*admit/total:.2f}% \n\
 Confm: {confirm}, {100*confirm/total:.2f}% \n\
 Decln: {decl}, {100*decl/total:.2f}% ")
         print(f"––––")
